@@ -18,10 +18,6 @@ And run bundler
 
     rake db:setup
 
-### Populate with seed data
-
-    rake db:seed
-
 ### Configure application.yml
 
     ADMIN_EMAIL: "abc@example.com"
