@@ -1,0 +1,21 @@
+<p>Dear Admin,</p>
+
+<p>A new order has been placed successfully.</p>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Sub Total</th>
+      <th scope="col">Order Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><%= @order.id %></td>
+        <td><%= @order.subtotal %></td>
+        <td><%= @order.get_humanized_status %></td>
+    </tr>
+  </tbody>
+
+<table>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OrderManagement</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <% if content_for?(:head) %>
+      <%= yield(:head) %>
+    <% end %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <% if flash.any? %>
+        <% flash.keys.each do |flash_key| %>
+          <% next if flash_key.to_s == 'timedout' %>
+          <div class="alert alert-info">
+            <a class="close" data-dismiss="alert" href="#"> x</a>
+            <%= flash.discard(flash_key) %>
+          </div>
+        <% end %>
+      <% end %>
+      <div class="row">
+        <div class="col-xs-6">
+          <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
+        </div>
+      </div>
+      <hr>
+      <%= yield %>
+    </div>
+  </body>
+</html>

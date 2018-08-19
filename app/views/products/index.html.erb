@@ -1,0 +1,13 @@
+<% content_for :head do %>
+  <meta http-equiv="refresh" content="60" />
+<% end %>
+
+<div class="container">
+    <h3 class="text-center">Products for Sale</h3>
+
+    <div class="row">
+        <% @products.each do |product| %>
+            <%= render "product_row", product: product, order_item: @order_item %>
+        <% end %>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-sm bg-dark">
+  <div class="container">
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+        <li>
+            <%= link_to "My Store", root_path, class: 'navbar-brand' %>
+        </li>
+        <li>
+            <%= link_to "EDI", upload_edi_path, class: 'navbar-brand' %>
+        </li>
+        
+        <% if user_signed_in? %>
+            <li class="nav-item my-orders">
+                <%= link_to 'My Orders', my_orders_path %>
+            </li>
+            <li class="nav-item">
+                <p class="welcome-user">Welcome <%= current_user.email %></p>
+            </li>
+        <% end %>
+    </ul>
+
+    <ul class="navbar-nav">
+        <% if user_signed_in? %>
+            <li class="nav-item logout">
+                <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+            </li>
+        <% else %>
+            <li class="nav-item">
+                <%= link_to('Login', new_user_session_path)  %>  
+            </li>
+            <li class="nav-item register">
+                <%= link_to('Register', new_user_registration_path)  %>  
+            </li>
+        <% end %>
+    </ul>
+  </div>
+</nav>

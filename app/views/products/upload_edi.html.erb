@@ -1,0 +1,23 @@
+<h2>Upload your EDI</h2>
+
+<%= form_tag process_edi_path, multipart: true do %>
+    <label for="file">File to Upload</label> 
+    <%= file_field_tag "file"%>
+    <%= submit_tag 'Submit' %>
+<% end %>
+<br>
+<hr>
+<br>
+<h3>EDI Document (purchase order) format (*.txt)</h3>
+<br>
+<div class="edi-format">
+    <p>AUTH*ABCadsdEis~</p>
+    <p>EM*khalid@nascenia.com~</p>
+    <p>PID*11~</p>
+    <p>QT*2~</p>
+</div>
+<br>
+<p>AUTH = Authorization Token</p>
+<p>EM = Email</p>
+<p>PID = Product ID</p>
+<p>QT = Quantity</p>
