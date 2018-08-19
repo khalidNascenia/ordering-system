@@ -45,3 +45,9 @@ Run rspec
     QT*2~
 
 AUTH = Authorization Token, EM = Email, PID = Product ID and QT = Quantity
+
+### Scheduler
+
+    whenever --update-crontab --set environment='development'
+
+Scheduler is set to run every 5 minutes to process/complete orders
